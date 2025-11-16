@@ -8,12 +8,53 @@ html {
 *::before {
   box-sizing: inherit;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 body {
   min-width: 320px;
   overflow-x: hidden;
+  font-family: "Roboto-Regular", sans-serif, "Arial";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
 }
 .container {
   padding: 0 20px;
+}
+@media (min-width: 640px) {
+  .container {
+    padding: 0 30px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    padding: 0 40px;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    min-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    min-width: 1320px;
+  }
 }
 .header {
   background-color: $accent;
@@ -24,17 +65,24 @@ body {
     align-items: center;
   }
 }
+@media (min-width: 640px) {
+  .header {
+    &__inner {
+      min-width: 100px;
+    }
+  }
+}
 .logo__link {
   margin-left: 8px;
 }
-@media (min-width: 800px) {
-  body {
-    background-color: #fff;
+@media (min-width: 640px) {
+  .logo__link {
+    margin-left: 14px;
   }
 }
-@media (min-width: 1000px) {
-  body {
-    background-color: #000;
+@media (min-width: 640px) {
+  .logo__link {
+    margin-left: 0px;
   }
 }
 .menu__btn {
@@ -54,5 +102,71 @@ body {
     top: 15px;
     left: 14px;
     box-shadow: 0 4px 0 0 $accent, 0 8px 0 0 $accent;
+  }
+}
+@media (min-width: 1440px) {
+  .menu__btn {
+    margin-right: 90px;
+  }
+}
+.head {
+  background-image: url(../images/bg-slider.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  min-height: 193px;
+}
+.top-slider {
+  background: rgba(33, 33, 33, 0.5);
+  &__item {
+    color: #fff;
+    text-align: center;
+    min-height: 193px;
+  }
+  &__title {
+    font-family: "Roboto Condensed", sans-serif;
+    line-height: 28px;
+    font-size: 28px;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 36px 0 28px;
+    max-width: 243px;
+    margin: 0 auto;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 8px;
+      width: 61px;
+      margin: 0 auto;
+      background-color: $text-color;
+    }
+  }
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    .slick-active {
+      button {
+        background-color: transparent;
+        border: 1px solid #476e4d;
+      }
+    }
+    button {
+      font-size: 0;
+      border: none;
+      background-color: $accent;
+      padding: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin: 0 10px;
+    }
   }
 }
